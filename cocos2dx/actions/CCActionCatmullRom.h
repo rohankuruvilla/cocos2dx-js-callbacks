@@ -43,16 +43,22 @@
 
 NS_CC_BEGIN;
 
+/**
+ * @addtogroup actions
+ * @{
+ */
+
 /** An Array that contain control points.
  Used by CCCardinalSplineTo and (By) and CCCatmullRomTo (and By) actions.
+@ingroup Actions
  */
 class CC_DLL CCPointArray : public CCNode
 {
 public:
     /** creates and initializes a Points array with capacity 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCPointArray* arrayWithCapacity(unsigned int capacity);
+    CC_DEPRECATED_ATTRIBUTE static CCPointArray* arrayWithCapacity(unsigned int capacity);
     
     /** creates and initializes a Points array with capacity */
     static CCPointArray* create(unsigned int capacity);
@@ -103,14 +109,15 @@ private:
 
 /** Cardinal Spline path.
  http://en.wikipedia.org/wiki/Cubic_Hermite_spline#Cardinal_spline
+@ingroup Actions
  */
 class CC_DLL CCCardinalSplineTo : public CCActionInterval
 {
 public:
     /** creates an action with a Cardinal Spline array of points and tension 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCCardinalSplineTo* actionWithDuration(float duration, CCPointArray* points, float tension);
+    CC_DEPRECATED_ATTRIBUTE static CCCardinalSplineTo* actionWithDuration(float duration, CCPointArray* points, float tension);
 
     /** creates an action with a Cardinal Spline array of points and tension */
     static CCCardinalSplineTo* create(float duration, CCPointArray* points, float tension);
@@ -146,14 +153,15 @@ protected:
 
 /** Cardinal Spline path.
  http://en.wikipedia.org/wiki/Cubic_Hermite_spline#Cardinal_spline
+ @ingroup Actions
  */
 class CC_DLL CCCardinalSplineBy : public CCCardinalSplineTo 
 {
 public:
     /** creates an action with a Cardinal Spline array of points and tension 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCCardinalSplineBy* actionWithDuration(float duration, CCPointArray* points, float tension);
+    CC_DEPRECATED_ATTRIBUTE static CCCardinalSplineBy* actionWithDuration(float duration, CCPointArray* points, float tension);
     
     /** creates an action with a Cardinal Spline array of points and tension */
     static CCCardinalSplineBy* create(float duration, CCPointArray* points, float tension);
@@ -170,14 +178,15 @@ protected:
 /** An action that moves the target with a CatmullRom curve to a destination point.
  A Catmull Rom is a Cardinal Spline with a tension of 0.5.
  http://en.wikipedia.org/wiki/Cubic_Hermite_spline#Catmull.E2.80.93Rom_spline
+ @ingroup Actions
  */
 class CC_DLL CCCatmullRomTo : public CCCardinalSplineTo
 {
 public:
     /** creates an action with a Cardinal Spline array of points and tension 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCCatmullRomTo* actionWithDuration(float dt, CCPointArray* points);
+    CC_DEPRECATED_ATTRIBUTE static CCCatmullRomTo* actionWithDuration(float dt, CCPointArray* points);
     
     /** creates an action with a Cardinal Spline array of points and tension */
     static CCCatmullRomTo* create(float dt, CCPointArray* points);
@@ -189,14 +198,15 @@ public:
 /** An action that moves the target with a CatmullRom curve by a certain distance.
  A Catmull Rom is a Cardinal Spline with a tension of 0.5.
  http://en.wikipedia.org/wiki/Cubic_Hermite_spline#Catmull.E2.80.93Rom_spline
+ @ingroup Actions
  */
 class CC_DLL CCCatmullRomBy : public CCCardinalSplineBy
 {
 public:
     /** creates an action with a Cardinal Spline array of points and tension 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCCatmullRomBy* actionWithDuration(float dt, CCPointArray* points);
+    CC_DEPRECATED_ATTRIBUTE static CCCatmullRomBy* actionWithDuration(float dt, CCPointArray* points);
     
     /** creates an action with a Cardinal Spline array of points and tension */
     static CCCatmullRomBy* create(float dt, CCPointArray* points);
@@ -207,6 +217,9 @@ public:
 
 /** Returns the Cardinal Spline position for a given set of control points, tension and time */
 extern CC_DLL CCPoint ccCardinalSplineAt(CCPoint &p0, CCPoint &p1, CCPoint &p2, CCPoint &p3, float tension, float t);
+
+// end of actions group
+/// @}
 
 NS_CC_END;
 

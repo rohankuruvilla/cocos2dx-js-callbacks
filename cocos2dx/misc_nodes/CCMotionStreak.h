@@ -32,6 +32,10 @@ THE SOFTWARE.
 
 NS_CC_BEGIN
 
+/**
+ * @addtogroup misc_nodes
+ * @{
+ */
 
 /** MotionStreak.
  Creates a trailing path.
@@ -42,13 +46,13 @@ public:
     CCMotionStreak();
     virtual ~CCMotionStreak();
     /** creates and initializes a motion streak with fade in seconds, minimum segments, stroke's width, color, texture filename 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCMotionStreak* streakWithFade(float fade, float minSeg, float stroke, ccColor3B color, const char* path);
+    CC_DEPRECATED_ATTRIBUTE static CCMotionStreak* streakWithFade(float fade, float minSeg, float stroke, ccColor3B color, const char* path);
     /** creates and initializes a motion streak with fade in seconds, minimum segments, stroke's width, color, texture 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCMotionStreak* streakWithFade(float fade, float minSeg, float stroke, ccColor3B color, CCTexture2D* texture);
+    CC_DEPRECATED_ATTRIBUTE static CCMotionStreak* streakWithFade(float fade, float minSeg, float stroke, ccColor3B color, CCTexture2D* texture);
 
     /** creates and initializes a motion streak with fade in seconds, minimum segments, stroke's width, color, texture filename */
     static CCMotionStreak* create(float fade, float minSeg, float stroke, ccColor3B color, const char* path);
@@ -119,6 +123,9 @@ private:
     GLubyte* m_pColorPointer;
     ccTex2F* m_pTexCoords;
 };
+
+// end of misc_nodes group
+/// @}
 
 NS_CC_END
 

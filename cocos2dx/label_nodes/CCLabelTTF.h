@@ -30,6 +30,13 @@ THE SOFTWARE.
 
 NS_CC_BEGIN
 
+/**
+ * @addtogroup GUI
+ * @{
+ * @addtogroup label
+ * @{
+ */
+
 /** @brief CCLabelTTF is a subclass of CCTextureNode that knows how to render text labels
 *
 * All features from CCTextureNode are valid in CCLabelTTF
@@ -44,21 +51,21 @@ public:
     const char* description();    
     
     /** creates a CCLabelTTF with a font name and font size in points
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCLabelTTF * labelWithString(const char *string, const char *fontName, float fontSize);
+    CC_DEPRECATED_ATTRIBUTE static CCLabelTTF * labelWithString(const char *string, const char *fontName, float fontSize);
     
     /** creates a CCLabelTTF from a fontname, horizontal alignment, dimension in points,  and font size in points.
-     @warning: This interface will be deprecated in future.
+     @deprecated: This interface will be deprecated sooner or later.
      @since v1.0
      */
-    static CCLabelTTF * labelWithString(const char *string, const CCSize& dimensions, CCTextAlignment hAlignment, 
+    CC_DEPRECATED_ATTRIBUTE static CCLabelTTF * labelWithString(const char *string, const CCSize& dimensions, CCTextAlignment hAlignment, 
                                         const char *fontName, float fontSize);
     
     /** creates a CCLabel from a fontname, alignment, dimension in points and font size in points
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCLabelTTF * labelWithString(const char *string, const CCSize& dimensions, CCTextAlignment hAlignment, 
+    CC_DEPRECATED_ATTRIBUTE static CCLabelTTF * labelWithString(const char *string, const CCSize& dimensions, CCTextAlignment hAlignment, 
                                         CCVerticalTextAlignment vAlignment, const char *fontName, float fontSize);
     
     /** creates a CCLabelTTF with a font name and font size in points*/
@@ -131,6 +138,10 @@ protected:
     
     std::string m_string;
 };
+
+// end of GUI group
+/// @}
+/// @}
 
 NS_CC_END
 

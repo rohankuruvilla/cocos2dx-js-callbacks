@@ -35,6 +35,13 @@
 
 NS_CC_EXT_BEGIN
 
+/**
+ * @addtogroup GUI
+ * @{
+ * @addtogroup control_extension
+ * @{
+ */
+
 /** @class CCControlButton Button control for Cocos2D. */
 class CC_DLL CCControlButton : public CCControl
 {        
@@ -97,20 +104,20 @@ protected:
 public:
     virtual bool init();
     virtual bool initWithLabelAndBackgroundSprite(CCNode* label, CCScale9Sprite* backgroundSprite);
-    //@warning: This interface will be deprecated in future.
-    static CCControlButton* buttonWithLabelAndBackgroundSprite(CCNode* label, CCScale9Sprite* backgroundSprite);
+    //@deprecated: This interface will be deprecated sooner or later.
+    CC_DEPRECATED_ATTRIBUTE static CCControlButton* buttonWithLabelAndBackgroundSprite(CCNode* label, CCScale9Sprite* backgroundSprite);
     static CCControlButton* create(CCNode* label, CCScale9Sprite* backgroundSprite);
     
     virtual bool initWithTitleAndFontNameAndFontSize(std::string title, const char * fontName, float fontSize);
-    //@warning: This interface will be deprecated in future.
-    static CCControlButton* buttonWithTitleAndFontNameAndFontSize(std::string title, const char * fontName, float fontSize);
+    //@deprecated: This interface will be deprecated sooner or later.
+    CC_DEPRECATED_ATTRIBUTE static CCControlButton* buttonWithTitleAndFontNameAndFontSize(std::string title, const char * fontName, float fontSize);
 
     static CCControlButton* create(std::string title, const char * fontName, float fontSize);
     
     virtual bool initWithBackgroundSprite(CCScale9Sprite* sprite);
 
-    //@warning: This interface will be deprecated in future.
-    static CCControlButton* buttonWithBackgroundSprite(CCScale9Sprite* sprite);
+    //@deprecated: This interface will be deprecated sooner or later.
+    CC_DEPRECATED_ATTRIBUTE static CCControlButton* buttonWithBackgroundSprite(CCScale9Sprite* sprite);
 
     static CCControlButton* create(CCScale9Sprite* sprite);
     
@@ -221,8 +228,13 @@ public:
      */
     virtual void setBackgroundSpriteFrameForState(CCSpriteFrame * spriteFrame, CCControlState state);
 
-    static CCControlButton * node();
+    CC_DEPRECATED_ATTRIBUTE static CCControlButton * node();
+    static CCControlButton* create();
 };
+
+// end of GUI group
+/// @}
+/// @}
 
 NS_CC_EXT_END
 

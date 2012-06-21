@@ -29,6 +29,11 @@ THE SOFTWARE.
 
 NS_CC_BEGIN
 
+/**
+ * @addtogroup misc_nodes
+ * @{
+ */
+
 /** Types of progress
  @since v0.99.1
  */
@@ -83,9 +88,9 @@ public:
 
 public:
     /** Creates a progress timer with the sprite as the shape the timer goes through 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCProgressTimer* progressWithSprite(CCSprite* sp);
+    CC_DEPRECATED_ATTRIBUTE static CCProgressTimer* progressWithSprite(CCSprite* sp);
     /** Creates a progress timer with the sprite as the shape the timer goes through */
     static CCProgressTimer* create(CCSprite* sp);
 protected:
@@ -126,6 +131,9 @@ protected:
 
     bool m_bReverseDirection;
 };
+
+// end of misc_nodes group
+/// @}
 
 NS_CC_END
 

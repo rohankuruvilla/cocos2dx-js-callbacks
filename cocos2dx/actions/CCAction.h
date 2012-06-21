@@ -38,6 +38,11 @@ enum {
     kCCActionTagInvalid = -1,
 };
 
+/**
+ * @addtogroup actions
+ * @{
+ */
+
 /** 
 @brief Base class for CCAction objects.
  */
@@ -93,9 +98,9 @@ public:
 
 public:
     /** Allocates and initializes the action 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCAction* action();
+    CC_DEPRECATED_ATTRIBUTE static CCAction* action();
 
     /** Create an action */
     static CCAction* create();
@@ -180,9 +185,9 @@ public:
 
 public:
     /** creates the action 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCSpeed* actionWithAction(CCActionInterval *pAction, float fSpeed);
+    CC_DEPRECATED_ATTRIBUTE static CCSpeed* actionWithAction(CCActionInterval *pAction, float fSpeed);
     
     /** create the action */
     static CCSpeed* create(CCActionInterval* pAction, float fSpeed);
@@ -229,9 +234,9 @@ public:
 public:
     /** creates the action with a set boundary,
         It will work with no boundary if @param rect is equal to CCRectZero.
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCFollow* actionWithTarget(CCNode *pFollowedNode, const CCRect& rect = CCRectZero);
+    CC_DEPRECATED_ATTRIBUTE static CCFollow* actionWithTarget(CCNode *pFollowedNode, const CCRect& rect = CCRectZero);
     /** creates the action with a set boundary,
     It will work with no boundary if @param rect is equal to CCRectZero.
     */
@@ -256,6 +261,9 @@ protected:
     float m_fTopBoundary;
     float m_fBottomBoundary;
 };
+
+// end of actions group
+/// @}
 
 NS_CC_END
 

@@ -35,6 +35,11 @@
 
 NS_CC_EXT_BEGIN
 
+/**
+ * @addtogroup GUI
+ * @{
+ */
+
 typedef enum {
     CCScrollViewDirectionHorizontal = 0,
     CCScrollViewDirectionVertical,
@@ -66,12 +71,12 @@ public:
     virtual void registerWithTouchDispatcher();
     /**
      * Returns an autoreleased scroll view object.
-     * @warning: This interface will be deprecated in future.
+     * @deprecated: This interface will be deprecated sooner or later.
      * @param size view size
      * @param container parent object
      * @return autoreleased scroll view object
      */
-    static CCScrollView* viewWithViewSize(CCSize size, CCNode* container = NULL);
+    CC_DEPRECATED_ATTRIBUTE static CCScrollView* viewWithViewSize(CCSize size, CCNode* container = NULL);
 
     /**
      * Returns an autoreleased scroll view object.
@@ -84,12 +89,12 @@ public:
 
     /**
      * Returns an autoreleased scroll view object.
-     * @warning: This interface will be deprecated in future.
+     * @deprecated: This interface will be deprecated sooner or later.
      * @param size view size
      * @param container parent object
      * @return autoreleased scroll view object
      */
-    static CCScrollView* node();
+    CC_DEPRECATED_ATTRIBUTE static CCScrollView* node();
 
     /**
      * Returns an autoreleased scroll view object.
@@ -337,6 +342,9 @@ protected:
      */
     CCFloat m_fMinScale, m_fMaxScale;
 };
+
+// end of GUI group
+/// @}
 
 NS_CC_EXT_END
 

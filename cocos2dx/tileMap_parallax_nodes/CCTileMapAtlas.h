@@ -33,6 +33,12 @@ NS_CC_BEGIN
 
 struct sImageTGA;
 class CCDictionary;
+
+/**
+ * @addtogroup tilemap_parallax_nodes
+ * @{
+ */
+
 /** @brief CCTileMapAtlas is a subclass of CCAtlasNode.
 
 It knows how to render a map based of tiles.
@@ -57,9 +63,9 @@ public:
     virtual ~CCTileMapAtlas();
     /** creates a CCTileMap with a tile file (atlas) with a map file and the width and height of each tile in points.
     The tile file will be loaded using the TextureMgr.
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCTileMapAtlas * tileMapAtlasWithTileFile(const char *tile, const char *mapFile, int tileWidth, int tileHeight);
+    CC_DEPRECATED_ATTRIBUTE static CCTileMapAtlas * tileMapAtlasWithTileFile(const char *tile, const char *mapFile, int tileWidth, int tileHeight);
     
     /** creates a CCTileMap with a tile file (atlas) with a map file and the width and height of each tile in points.
     The tile file will be loaded using the TextureMgr.
@@ -92,6 +98,9 @@ protected:
     //! numbers of tiles to render
     int m_nItemsToRender;
 };
+
+// end of tilemap_parallax_nodes group
+/// @}
 
 NS_CC_END
 

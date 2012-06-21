@@ -45,6 +45,11 @@ class CCSize;
 class CCTexture2D;
 struct transformValues_;
 
+/**
+ * @addtogroup sprite_nodes
+ * @{
+ */
+
 #define CCSpriteIndexNotInitialized 0xffffffff     /// CCSprite invalid index on the CCSpriteBatchode
 
 
@@ -123,15 +128,15 @@ public:
     /** Creates an sprite with a texture.
      The rect used will be the size of the texture.
      The offset will be (0,0).
-     @warning: This interface will be deprecated in future.
+     @deprecated: This interface will be deprecated sooner or later.
      */
-    static CCSprite* spriteWithTexture(CCTexture2D *pTexture);
+    CC_DEPRECATED_ATTRIBUTE static CCSprite* spriteWithTexture(CCTexture2D *pTexture);
 
     /** Creates an sprite with a texture and a rect.
      The offset will be (0,0).
-     @warning: This interface will be deprecated in future.
+     @deprecated: This interface will be deprecated sooner or later.
      */
-    static CCSprite* spriteWithTexture(CCTexture2D *pTexture, const CCRect& rect);
+    CC_DEPRECATED_ATTRIBUTE static CCSprite* spriteWithTexture(CCTexture2D *pTexture, const CCRect& rect);
 
         /** Creates an sprite with a texture.
      The rect used will be the size of the texture.
@@ -145,17 +150,17 @@ public:
     static CCSprite* createWithTexture(CCTexture2D *pTexture, const CCRect& rect);
 
     /** Creates an sprite with an sprite frame. 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCSprite* spriteWithSpriteFrame(CCSpriteFrame *pSpriteFrame);
+    CC_DEPRECATED_ATTRIBUTE static CCSprite* spriteWithSpriteFrame(CCSpriteFrame *pSpriteFrame);
 
     /** Creates an sprite with an sprite frame name.
      An CCSpriteFrame will be fetched from the CCSpriteFrameCache by name.
      If the CCSpriteFrame doesn't exist it will raise an exception.
-     @warning: This interface will be deprecated in future.
+     @deprecated: This interface will be deprecated sooner or later.
      @since v0.9
      */
-    static CCSprite* spriteWithSpriteFrameName(const char *pszSpriteFrameName);
+    CC_DEPRECATED_ATTRIBUTE static CCSprite* spriteWithSpriteFrameName(const char *pszSpriteFrameName);
 
     /** Creates an sprite with an sprite frame. */
     static CCSprite* createWithSpriteFrame(CCSpriteFrame *pSpriteFrame);
@@ -169,16 +174,16 @@ public:
 
     /** Creates an sprite with an image filename.
      The rect used will be the size of the image.
-     @warning: This interface will be deprecated in future.
      The offset will be (0,0).
+     @deprecated: This interface will be deprecated sooner or later.
      */
-    static CCSprite* spriteWithFile(const char *pszFileName);
+    CC_DEPRECATED_ATTRIBUTE static CCSprite* spriteWithFile(const char *pszFileName);
 
     /** Creates an sprite with an image filename and a rect.
      The offset will be (0,0).
-     @warning: This interface will be deprecated in future.
+     @deprecated: This interface will be deprecated sooner or later.
      */
-    static CCSprite* spriteWithFile(const char *pszFileName, const CCRect& rect);
+    CC_DEPRECATED_ATTRIBUTE static CCSprite* spriteWithFile(const char *pszFileName, const CCRect& rect);
     
     /** Creates an sprite with an image filename.
      The rect used will be the size of the image.
@@ -192,9 +197,9 @@ public:
     static CCSprite* create(const char *pszFileName, const CCRect& rect);
 
     /** Creates an sprite.
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
      */
-    static CCSprite* node();
+    CC_DEPRECATED_ATTRIBUTE static CCSprite* node();
     /** Creates an sprite.
      */
     static CCSprite* create();
@@ -381,6 +386,9 @@ protected:
     bool m_bFlipX;
     bool m_bFlipY;
 };
+
+// end of sprite_nodes group
+/// @}
 
 NS_CC_END
 

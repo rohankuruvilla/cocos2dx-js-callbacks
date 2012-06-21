@@ -39,6 +39,13 @@
 
 NS_CC_EXT_BEGIN
 
+/**
+ * @addtogroup GUI
+ * @{
+ * @addtogroup control_extension
+ * @{
+ */
+
 class CC_DLL CCControlSlider: public CCControl
 {
     //maunally put in the setters
@@ -75,20 +82,20 @@ public:
     /** 
     * Creates slider with a background filename, a progress filename and a 
     * thumb image filename.
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCControlSlider* sliderWithFiles(const char* bgFile, const char* progressFile, const char* thumbFile);
+    CC_DEPRECATED_ATTRIBUTE static CCControlSlider* sliderWithFiles(const char* bgFile, const char* progressFile, const char* thumbFile);
 
     /** 
     * Creates a slider with a given background sprite and a progress bar and a
     * thumb item.
-    *@warning: This interface will be deprecated in future.
+    *@deprecated: This interface will be deprecated sooner or later.
     * @see initWithBackgroundSprite:progressSprite:thumbMenuItem:
     */
-    static CCControlSlider* sliderWithSprites(CCSprite * backgroundSprite, CCSprite* pogressSprite, CCMenuItem* thumbItem);
+    CC_DEPRECATED_ATTRIBUTE static CCControlSlider* sliderWithSprites(CCSprite * backgroundSprite, CCSprite* pogressSprite, CCMenuItem* thumbItem);
 
 
-        /** 
+    /** 
     * Creates slider with a background filename, a progress filename and a 
     * thumb image filename.
     */
@@ -119,6 +126,10 @@ protected:
 /** Returns the value for the given location. */
     float valueForLocation(CCPoint location);
 };
+
+// end of GUI group
+/// @}
+/// @}
 
 NS_CC_EXT_END
 

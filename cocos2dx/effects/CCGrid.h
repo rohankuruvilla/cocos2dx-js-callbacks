@@ -39,6 +39,11 @@ class CCTexture2D;
 class CCGrabber;
 class CCGLProgram;
 
+/**
+ * @addtogroup effects
+ * @{
+ */
+
 /** Base class for other
 */
 class CCGridBase : public CCObject
@@ -77,13 +82,13 @@ public:
 
 public:
     /** create one Grid 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCGridBase* gridWithSize(const ccGridSize& gridSize, CCTexture2D *texture, bool flipped);
+    CC_DEPRECATED_ATTRIBUTE static CCGridBase* gridWithSize(const ccGridSize& gridSize, CCTexture2D *texture, bool flipped);
     /** create one Grid 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCGridBase* gridWithSize(const ccGridSize& gridSize);
+    CC_DEPRECATED_ATTRIBUTE static CCGridBase* gridWithSize(const ccGridSize& gridSize);
 
     /** create one Grid */
     static CCGridBase* create(const ccGridSize& gridSize, CCTexture2D *texture, bool flipped);
@@ -166,6 +171,9 @@ protected:
     GLvoid *m_pOriginalVertices;
     GLushort *m_pIndices;
 };
+
+// end of effects group
+/// @}
 
 NS_CC_END
 

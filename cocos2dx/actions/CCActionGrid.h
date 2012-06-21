@@ -32,6 +32,11 @@ NS_CC_BEGIN
 
 class CCGridBase;
 
+/**
+ * @addtogroup actions
+ * @{
+ */
+
 /** @brief Base class for Grid actions */
 class CC_DLL CCGridAction : public CCActionInterval
 {
@@ -47,9 +52,9 @@ public:
 
 public:
     /** creates the action with size and duration 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCGridAction* actionWithSize(const ccGridSize& gridSize, float duration);
+    CC_DEPRECATED_ATTRIBUTE static CCGridAction* actionWithSize(const ccGridSize& gridSize, float duration);
     /** creates the action with size and duration */
     static CCGridAction* create(const ccGridSize& gridSize, float duration);
 protected:
@@ -74,9 +79,9 @@ public:
 
 public:
     /** creates the action with size and duration 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCGrid3DAction* actionWithSize(const ccGridSize& gridSize, float duration);
+    CC_DEPRECATED_ATTRIBUTE static CCGrid3DAction* actionWithSize(const ccGridSize& gridSize, float duration);
     /** creates the action with size and duration */
     static CCGrid3DAction* create(const ccGridSize& gridSize, float duration);
 };
@@ -97,9 +102,9 @@ public:
 
 public:
     /** creates the action with size and duration 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCTiledGrid3DAction* actionWithSize(const ccGridSize& gridSize, float duration);
+    CC_DEPRECATED_ATTRIBUTE static CCTiledGrid3DAction* actionWithSize(const ccGridSize& gridSize, float duration);
     /** creates the action with size and duration */
     static CCTiledGrid3DAction* create(const ccGridSize& gridSize, float duration);
 };
@@ -123,9 +128,9 @@ public:
 
 public:
     /** creates the action with an inner action that has the amplitude property, and a duration time 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCAccelDeccelAmplitude* actionWithAction(CCAction *pAction, float duration);
+    CC_DEPRECATED_ATTRIBUTE static CCAccelDeccelAmplitude* actionWithAction(CCAction *pAction, float duration);
     /** creates the action with an inner action that has the amplitude property, and a duration time */
     static CCAccelDeccelAmplitude* create(CCAction *pAction, float duration);
 
@@ -153,9 +158,9 @@ public:
 
 public:
     /** creates the action with an inner action that has the amplitude property, and a duration time
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCAccelAmplitude* actionWithAction(CCAction *pAction, float duration);
+    CC_DEPRECATED_ATTRIBUTE static CCAccelAmplitude* actionWithAction(CCAction *pAction, float duration);
     /** creates the action with an inner action that has the amplitude property, and a duration time */
     static CCAccelAmplitude* create(CCAction *pAction, float duration);
 protected:
@@ -182,9 +187,9 @@ public:
 
 public:
     /** creates the action with an inner action that has the amplitude property, and a duration time 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCDeccelAmplitude* actionWithAction(CCAction *pAction, float duration);
+    CC_DEPRECATED_ATTRIBUTE static CCDeccelAmplitude* actionWithAction(CCAction *pAction, float duration);
     /** creates the action with an inner action that has the amplitude property, and a duration time */
     static CCDeccelAmplitude* create(CCAction *pAction, float duration);
 
@@ -205,9 +210,9 @@ public:
 
 public:
     /** Allocates and initializes the action 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCStopGrid* action(void);
+    CC_DEPRECATED_ATTRIBUTE static CCStopGrid* action(void);
     /** Allocates and initializes the action */
     static CCStopGrid* create(void);
 };
@@ -223,14 +228,17 @@ public:
 
 public:
     /** creates an action with the number of times that the current grid will be reused 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCReuseGrid* actionWithTimes(int times);
+    CC_DEPRECATED_ATTRIBUTE static CCReuseGrid* actionWithTimes(int times);
     /** creates an action with the number of times that the current grid will be reused */
     static CCReuseGrid* create(int times);
 protected:
     int m_nTimes;
 };
+
+// end of actions group
+/// @}
 
 NS_CC_END
 

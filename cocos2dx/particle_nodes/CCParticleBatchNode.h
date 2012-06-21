@@ -38,6 +38,11 @@ class CCTexture2D;
 class CCTextureAtlas;
 class CCParticleSystem;
 
+/**
+ * @addtogroup particle_nodes
+ * @{
+ */
+
 #define kCCParticleDefaultCapacity 500
 
 /** CCParticleBatchNode is like a batch node: if it contains children, it will draw them in 1 single OpenGL call
@@ -66,14 +71,14 @@ public:
     virtual ~CCParticleBatchNode();
 
     /** initializes the particle system with CCTexture2D, a capacity of particles, which particle system to use 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCParticleBatchNode* batchNodeWithTexture(CCTexture2D *tex, unsigned int capacity = kCCParticleDefaultCapacity);
+    CC_DEPRECATED_ATTRIBUTE static CCParticleBatchNode* batchNodeWithTexture(CCTexture2D *tex, unsigned int capacity = kCCParticleDefaultCapacity);
 
     /** initializes the particle system with the name of a file on disk (for a list of supported formats look at the CCTexture2D class), a capacity of particles
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCParticleBatchNode* batchNodeWithFile(const char* fileImage, unsigned int capacity = kCCParticleDefaultCapacity);
+    CC_DEPRECATED_ATTRIBUTE static CCParticleBatchNode* batchNodeWithFile(const char* fileImage, unsigned int capacity = kCCParticleDefaultCapacity);
 
     /** initializes the particle system with CCTexture2D, a capacity of particles, which particle system to use */
     static CCParticleBatchNode* createWithTexture(CCTexture2D *tex, unsigned int capacity = kCCParticleDefaultCapacity);
@@ -126,6 +131,9 @@ private:
     /** the blend function used for drawing the quads */
     ccBlendFunc m_tBlendFunc;
 };
+
+// end of particle_nodes group
+/// @}
 
 NS_CC_END
 

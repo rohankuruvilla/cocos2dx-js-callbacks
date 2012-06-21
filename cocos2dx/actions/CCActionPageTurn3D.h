@@ -28,6 +28,12 @@ THE SOFTWARE.
 #include "CCActionGrid3D.h"
 
 NS_CC_BEGIN
+
+/**
+ * @addtogroup actions
+ * @{
+ */
+
 /**
  @brief This action simulates a page turn from the bottom right hand corner of the screen.
  It's not much use by itself but is used by the PageTurnTransition.
@@ -44,12 +50,15 @@ public:
 
 public:
     /** create the action 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCPageTurn3D* actionWithSize(const ccGridSize& gridSize, float time);
+    CC_DEPRECATED_ATTRIBUTE static CCPageTurn3D* actionWithSize(const ccGridSize& gridSize, float time);
     /** create the action */
     static CCPageTurn3D* create(const ccGridSize& gridSize, float time);
 };
+
+// end of actions group
+/// @}
 
 NS_CC_END
 

@@ -37,6 +37,11 @@ class CCTMXLayerInfo;
 class CCTMXTilesetInfo;
 class CCTMXMapInfo;
 
+/**
+ * @addtogroup tilemap_parallax_nodes
+ * @{
+ */
+
 /** Possible oritentations of the TMX map */
 enum
 {
@@ -118,14 +123,14 @@ public:
     virtual ~CCTMXTiledMap();
 
     /** creates a TMX Tiled Map with a TMX file.
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCTMXTiledMap* tiledMapWithTMXFile(const char *tmxFile);
+    CC_DEPRECATED_ATTRIBUTE static CCTMXTiledMap* tiledMapWithTMXFile(const char *tmxFile);
 
     /** initializes a TMX Tiled Map with a TMX formatted XML string and a path to TMX resources 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCTMXTiledMap* tiledMapWithXML(const char* tmxString, const char* resourcePath);
+    CC_DEPRECATED_ATTRIBUTE static CCTMXTiledMap* tiledMapWithXML(const char* tmxString, const char* resourcePath);
 
     /** creates a TMX Tiled Map with a TMX file.*/
     static CCTMXTiledMap* create(const char *tmxFile);
@@ -160,6 +165,9 @@ protected:
     CCDictionary* m_pTileProperties;
 
 };
+
+// end of tilemap_parallax_nodes group
+/// @}
 
 NS_CC_END
 

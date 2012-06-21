@@ -37,6 +37,13 @@
 
 NS_CC_EXT_BEGIN
 
+/**
+ * @addtogroup GUI
+ * @{
+ * @addtogroup control_extension
+ * @{
+ */
+
 class CC_DLL CCControlSaturationBrightnessPicker : public CCControl
 {
     CC_SYNTHESIZE_READONLY(float, m_saturation, Saturation);
@@ -57,8 +64,8 @@ public:
     virtual ~CCControlSaturationBrightnessPicker();
     virtual bool initWithTargetAndPos(CCNode* target, CCPoint pos);
 
-    //@warning: This interface will be deprecated in future.
-    static CCControlSaturationBrightnessPicker* pickerWithTargetAndPos(CCNode* target, CCPoint pos);
+    //@deprecated: This interface will be deprecated sooner or later.
+    CC_DEPRECATED_ATTRIBUTE static CCControlSaturationBrightnessPicker* pickerWithTargetAndPos(CCNode* target, CCPoint pos);
     static CCControlSaturationBrightnessPicker* create(CCNode* target, CCPoint pos);
     virtual void updateWithHSV(HSV hsv);
     virtual void updateDraggerWithHSV(HSV hsv);
@@ -70,6 +77,10 @@ protected:
     virtual bool ccTouchBegan(CCTouch* touch, CCEvent* pEvent);
     virtual void ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent);
 };
+
+// end of GUI group
+/// @}
+/// @}
 
 NS_CC_EXT_END
 

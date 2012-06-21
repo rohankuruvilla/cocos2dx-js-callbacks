@@ -41,6 +41,13 @@ Use any of these editors to generate BMFonts:
 
 NS_CC_BEGIN
 
+/**
+ * @addtogroup GUI
+ * @{
+ * @addtogroup label
+ * @{
+ */
+
 enum {
     kCCLabelAutomaticWidth = -1,
 };
@@ -104,9 +111,9 @@ public:
     virtual ~CCBMFontConfiguration();
     const char * description();
     /** allocates a CCBMFontConfiguration with a FNT file 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCBMFontConfiguration * configurationWithFNTFile(const char *FNTfile);
+    CC_DEPRECATED_ATTRIBUTE static CCBMFontConfiguration * configurationWithFNTFile(const char *FNTfile);
 
     /** allocates a CCBMFontConfiguration with a FNT file */
     static CCBMFontConfiguration * create(const char *FNTfile);
@@ -196,16 +203,16 @@ public:
     */
     static void purgeCachedData();
     /** creates a bitmap font altas with an initial string and the FNT file 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCLabelBMFont * labelWithString(const char *str, const char *fntFile, float width = kCCLabelAutomaticWidth, CCTextAlignment alignment = kCCTextAlignmentLeft, CCPoint imageOffset = CCPointZero);
+    CC_DEPRECATED_ATTRIBUTE static CCLabelBMFont * labelWithString(const char *str, const char *fntFile, float width = kCCLabelAutomaticWidth, CCTextAlignment alignment = kCCTextAlignmentLeft, CCPoint imageOffset = CCPointZero);
     /** creates a bitmap font altas with an initial string and the FNT file */
     static CCLabelBMFont * create(const char *str, const char *fntFile, float width = kCCLabelAutomaticWidth, CCTextAlignment alignment = kCCTextAlignmentLeft, CCPoint imageOffset = CCPointZero);
 
     /** Creates an label.
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
      */
-    static CCLabelBMFont * node();
+    CC_DEPRECATED_ATTRIBUTE static CCLabelBMFont * node();
 
     /** Creates an label.
      */
@@ -251,6 +258,10 @@ CC_DLL CCBMFontConfiguration * FNTConfigLoadFile( const char *file );
 /** Purges the FNT config cache
 */
 CC_DLL void FNTConfigRemoveCache( void );
+
+// end of GUI group
+/// @}
+/// @}
 
 NS_CC_END
 

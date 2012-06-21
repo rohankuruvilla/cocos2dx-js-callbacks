@@ -48,6 +48,11 @@ class CCLabelProtocol;
 class CCScheduler;
 class CCActionManager;
 
+/**
+ * @addtogroup base_nodes
+ * @{
+ */
+
 enum {
     kCCNodeTagInvalid = -1,
 };
@@ -306,9 +311,9 @@ public:
 
     /** allocates and initializes a node.
      The node will be created as "autorelease".
-	 @warning: This interface will be deprecated in future.
+	 @deprecated: This interface will be deprecated sooner or later.
      */
-    static CCNode * node(void);
+    CC_DEPRECATED_ATTRIBUTE static CCNode * node(void);
 
 	/** allocates and initializes a node.
      The node will be created as "autorelease".
@@ -606,6 +611,9 @@ public:
      */
     CCPoint convertTouchToNodeSpaceAR(CCTouch * touch);
 };
+
+// end of base_node group
+/// @}
 
 NS_CC_END
 

@@ -9,6 +9,13 @@
 
 NS_CC_EXT_BEGIN
 
+/**
+ * @addtogroup GUI
+ * @{
+ * @addtogroup control_extension
+ * @{
+ */
+
 class CC_DLL CCMenuPassive : public CCLayer, public CCRGBAProtocol
 {
         /** Color: conforms with CCRGBAProtocol protocol */
@@ -18,21 +25,21 @@ class CC_DLL CCMenuPassive : public CCLayer, public CCRGBAProtocol
 
 public:
         /** creates an empty CCMenu 
-        @warning: This interface will be deprecated in future.
+        @deprecated: This interface will be deprecated sooner or later.
         */
-        static CCMenuPassive* node();
+        CC_DEPRECATED_ATTRIBUTE static CCMenuPassive* node();
 
         /** creates a CCMenu with it's items 
-        @warning: This interface will be deprecated in future.
+        @deprecated: This interface will be deprecated sooner or later.
         */
-        static CCMenuPassive* menuWithItems(CCNode* item, ...);
+        CC_DEPRECATED_ATTRIBUTE static CCMenuPassive* menuWithItems(CCNode* item, ...);
 
         /** creates a CCMenu with it's item, then use addChild() to add 
           * other items. It is used for script, it can't init with undetermined
           * number of variables.
-          @warning: This interface will be deprecated in future.
+          @deprecated: This interface will be deprecated sooner or later.
         */
-        static CCMenuPassive* menuWithItem(CCNode* item);
+        CC_DEPRECATED_ATTRIBUTE static CCMenuPassive* menuWithItem(CCNode* item);
 
         /** creates an empty CCMenu */
         static CCMenuPassive* create();
@@ -75,6 +82,10 @@ public:
         virtual void setOpacityModifyRGB(bool bValue) {CC_UNUSED_PARAM(bValue);}
         virtual bool isOpacityModifyRGB(void) { return false;}
 };
+
+// end of GUI group
+/// @}
+/// @}
 
 NS_CC_EXT_END
 

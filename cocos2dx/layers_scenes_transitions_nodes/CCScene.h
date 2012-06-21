@@ -31,6 +31,11 @@ THE SOFTWARE.
 
 NS_CC_BEGIN
 
+/**
+ * @addtogroup scene
+ * @{
+ */
+
 /** @brief CCScene is a subclass of CCNode that is used only as an abstract concept.
 
 CCScene an CCNode are almost identical with the difference that CCScene has it's
@@ -47,16 +52,19 @@ public:
     CCScene();
     virtual ~CCScene();
     bool init();
-    static CCScene *node(void);
+    CC_DEPRECATED_ATTRIBUTE static CCScene *node(void);
     static CCScene *create(void);
 };
+
+// end of scene group
+/// @}
 
 NS_CC_END
 
 // for the subclass of CCScene, each has to implement the static "node" method
-// @warning: This interface will be deprecated in future.
+// @deprecated: This interface will be deprecated sooner or later.
 #define SCENE_NODE_FUNC(scene) \
-static scene* node() \
+CC_DEPRECATED_ATTRIBUTE static scene* node() \
 { \
     scene *pRet = new scene(); \
     if (pRet && pRet->init()) \
@@ -72,9 +80,9 @@ static scene* node() \
     } \
 }; 
 
-// @warning: This interface will be deprecated in future.
+// @deprecated: This interface will be deprecated sooner or later.
 #define SCENE_FUNC_PARAM(__TYPE__,__PARAMTYPE__,__PARAM__) \
-    static cocos2d::CCScene* node(__PARAMTYPE__ __PARAM__) \
+    CC_DEPRECATED_ATTRIBUTE static cocos2d::CCScene* node(__PARAMTYPE__ __PARAM__) \
     { \
         cocos2d::CCScene * scene = NULL; \
         do  \
@@ -88,7 +96,7 @@ static scene* node() \
         return scene; \
     }
 
-// for the subclass of CCScene, each has to implement the static "node" method 
+// for the subclass of CCScene, each has to implement the static "create" method 
 #define SCENE_CREATE_FUNC(scene) \
 static scene* create() \
 { \

@@ -39,6 +39,11 @@ NS_CC_BEGIN
 class CCTexture2D;
 class CCSpriteFrame;
 
+/**
+ * @addtogroup sprite_nodes
+ * @{
+ */
+
 /** CCAnimationFrame
  A frame of the animation. It contains information like:
     - sprite frame name
@@ -84,23 +89,23 @@ public:
     ~CCAnimation(void);
 public:
     /** Creates an animation
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     @since v0.99.5
     */
-    static CCAnimation* animation(void);
+    CC_DEPRECATED_ATTRIBUTE static CCAnimation* animation(void);
 
     /* Creates an animation with an array of CCSpriteFrame and a delay between frames in seconds.
      The frames will be added with one "delay unit".
-     @warning: This interface will be deprecated in future.
+     @deprecated: This interface will be deprecated sooner or later.
      @since v0.99.5
     */
-    static CCAnimation* animationWithSpriteFrames(CCArray* arrayOfSpriteFrameNames, float delay = 0.0f);
+    CC_DEPRECATED_ATTRIBUTE static CCAnimation* animationWithSpriteFrames(CCArray* arrayOfSpriteFrameNames, float delay = 0.0f);
 
     /* Creates an animation with an array of CCAnimationFrame, the delay per units in seconds and and how many times it should be executed.
-     @warning: This interface will be deprecated in future.
+     @deprecated: This interface will be deprecated sooner or later.
      @since v2.0
      */
-    static CCAnimation* animationWithAnimationFrames(CCArray *arrayOfAnimationFrameNames, float delayPerUnit, unsigned int loops);
+    CC_DEPRECATED_ATTRIBUTE static CCAnimation* animationWithAnimationFrames(CCArray *arrayOfAnimationFrameNames, float delayPerUnit, unsigned int loops);
 
         /** Creates an animation
     @since v0.99.5
@@ -167,6 +172,9 @@ public:
     /** how many times the animation is going to loop. 0 means animation is not animated. 1, animation is executed one time, ... */
     CC_SYNTHESIZE(unsigned int, m_uLoops, Loops)
 };
+
+// end of sprite_nodes group
+/// @}
 
 NS_CC_END
 

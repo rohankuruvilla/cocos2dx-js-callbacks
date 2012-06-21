@@ -33,6 +33,11 @@ NS_CC_BEGIN
 
 struct _ccArray;
 
+/**
+ * @addtogroup tilemap_parallax_nodes
+ * @{
+ */
+
 /** @brief CCParallaxNode: A node that simulates a parallax scroller
 
 The children will be moved faster / slower than the parent according the the parallax ratio.
@@ -50,8 +55,8 @@ public:
     */
     CCParallaxNode();
     virtual ~CCParallaxNode();
-    //@warning: This interface will be deprecated in future.
-    static CCParallaxNode * node();
+    //@deprecated: This interface will be deprecated sooner or later.
+    CC_DEPRECATED_ATTRIBUTE static CCParallaxNode * node();
     static CCParallaxNode * create();
     virtual void addChild(CCNode * child, unsigned int z, const CCPoint& parallaxRatio, const CCPoint& positionOffset);
     // super methods
@@ -64,6 +69,9 @@ private:
 protected:
     CCPoint    m_tLastPosition;
 };
+
+// end of tilemap_parallax_nodes group
+/// @}
 
 NS_CC_END
 

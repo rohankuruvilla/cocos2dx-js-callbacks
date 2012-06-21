@@ -30,6 +30,13 @@ THE SOFTWARE.
 
 NS_CC_BEGIN
 
+/**
+ * @addtogroup GUI
+ * @{
+ * @addtogroup label
+ * @{
+ */
+
 /** @brief CCLabelAtlas is a subclass of CCAtlasNode.
 
 It can be as a replacement of CCLabel since it is MUCH faster.
@@ -52,15 +59,15 @@ public:
         m_sString.clear(); 
     }
     /** creates the CCLabelAtlas with a string, a char map file(the atlas), the width and height of each element and the starting char of the atlas 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCLabelAtlas * labelWithString(const char *label, const char *charMapFile, unsigned int itemWidth, unsigned int itemHeight, unsigned int startCharMap);
+    CC_DEPRECATED_ATTRIBUTE static CCLabelAtlas * labelWithString(const char *label, const char *charMapFile, unsigned int itemWidth, unsigned int itemHeight, unsigned int startCharMap);
     
     /** creates the CCLabelAtlas with a string and a configuration file
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     @since v2.0
     */
-    static CCLabelAtlas* labelWithString(const char *sring, const char *fntFile);
+    CC_DEPRECATED_ATTRIBUTE static CCLabelAtlas* labelWithString(const char *sring, const char *fntFile);
 
     /** creates the CCLabelAtlas with a string, a char map file(the atlas), the width and height of each element and the starting char of the atlas */
     static CCLabelAtlas * create(const char *label, const char *charMapFile, unsigned int itemWidth, unsigned int itemHeight, unsigned int startCharMap);
@@ -91,6 +98,11 @@ protected:
     // the first char in the charmap
     unsigned int m_uMapStartChar;
 };
+
+// end of GUI group
+/// @}
+/// @}
+
 
 NS_CC_END
 

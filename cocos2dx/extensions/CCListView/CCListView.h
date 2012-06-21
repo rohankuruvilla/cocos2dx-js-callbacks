@@ -35,6 +35,11 @@ THE SOFTWARE.
 
 NS_CC_EXT_BEGIN
 
+/**
+ * @addtogroup GUI
+ * @{
+ */
+
 class CC_DLL CCRange
 {
 public:
@@ -121,8 +126,8 @@ public:
     virtual ~CCListView(void);
     CCListView(void);
 
-    // @warning: This interface will be deprecated in future.
-    static CCListView* viewWithMode(CCListViewMode mode);
+    // @deprecated: This interface will be deprecated sooner or later.
+    CC_DEPRECATED_ATTRIBUTE static CCListView* viewWithMode(CCListViewMode mode);
 
     static CCListView* create(CCListViewMode mode);
 
@@ -213,6 +218,9 @@ private:
     bool                   m_bIsEnabled;
     bool                   m_bIsOnTouch;
 };
+
+// end of GUI group
+/// @}
 
 NS_CC_EXT_END
 

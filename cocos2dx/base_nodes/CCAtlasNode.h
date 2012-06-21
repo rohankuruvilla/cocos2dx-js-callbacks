@@ -33,6 +33,11 @@ THE SOFTWARE.
 
 NS_CC_BEGIN
 
+/**
+ * @addtogroup base_nodes
+ * @{
+ */
+
 class CCTextureAtlas;
 
 /** @brief CCAtlasNode is a subclass of CCNode that implements the CCRGBAProtocol and
@@ -80,9 +85,9 @@ public:
     virtual ~CCAtlasNode();
 
     /** creates a CCAtlasNode  with an Atlas file the width and height of each item and the quantity of items to render
-	@warning: This interface will be deprecated in future.
+	@deprecated: This interface will be deprecated sooner or later.
 	*/
-    static CCAtlasNode * atlasWithTileFile(const char* tile,unsigned int tileWidth, unsigned int tileHeight, 
+    CC_DEPRECATED_ATTRIBUTE static CCAtlasNode * atlasWithTileFile(const char* tile,unsigned int tileWidth, unsigned int tileHeight, 
          unsigned int itemsToRender);
 
 	/** creates a CCAtlasNode  with an Atlas file the width and height of each item and the quantity of items to render*/
@@ -113,6 +118,9 @@ private :
     void updateOpacityModifyRGB();
 
 };
+
+// end of base_node group
+/// @}
 
 NS_CC_END
 

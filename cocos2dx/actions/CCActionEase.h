@@ -33,8 +33,14 @@ NS_CC_BEGIN
 class CCObject;
 class CCZone;
 
+/**
+ * @addtogroup actions
+ * @{
+ */
+
 /** 
  @brief Base class for Easing actions
+ @ingroup Actions
  */
 class CC_DLL CCActionEase : public CCActionInterval
 {
@@ -52,9 +58,9 @@ public:
 
 public:
     /** creates the action 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCActionEase* actionWithAction(CCActionInterval *pAction);
+    CC_DEPRECATED_ATTRIBUTE static CCActionEase* actionWithAction(CCActionInterval *pAction);
 
     /** creates the action */
     static CCActionEase* create(CCActionInterval *pAction);
@@ -65,6 +71,7 @@ protected:
 
 /** 
  @brief Base class for Easing actions with rate parameters
+ @ingroup Actions
  */
 class CC_DLL CCEaseRateAction : public CCActionEase
 {
@@ -84,9 +91,9 @@ public:
 
 public:
     /** Creates the action with the inner action and the rate parameter 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCEaseRateAction* actionWithAction(CCActionInterval* pAction, float fRate);
+    CC_DEPRECATED_ATTRIBUTE static CCEaseRateAction* actionWithAction(CCActionInterval* pAction, float fRate);
 
     /** Creates the action with the inner action and the rate parameter */
     static CCEaseRateAction* create(CCActionInterval* pAction, float fRate);
@@ -97,6 +104,7 @@ protected:
 
 /** 
  @brief CCEaseIn action with a rate
+ @ingroup Actions
  */
 class CC_DLL CCEaseIn : public CCEaseRateAction
 {
@@ -106,9 +114,9 @@ public:
     virtual CCObject* copyWithZone(CCZone* pZone);
 public:
     /** Creates the action with the inner action and the rate parameter 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCEaseIn* actionWithAction(CCActionInterval* pAction, float fRate);
+    CC_DEPRECATED_ATTRIBUTE static CCEaseIn* actionWithAction(CCActionInterval* pAction, float fRate);
 
     /** Creates the action with the inner action and the rate parameter */
     static CCEaseIn* create(CCActionInterval* pAction, float fRate);
@@ -116,6 +124,7 @@ public:
 
 /** 
  @brief CCEaseOut action with a rate
+ @ingroup Actions
  */
 class CC_DLL CCEaseOut : public CCEaseRateAction
 {
@@ -126,9 +135,9 @@ public:
 
 public:
     /** Creates the action with the inner action and the rate parameter
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCEaseOut* actionWithAction(CCActionInterval* pAction, float fRate);
+    CC_DEPRECATED_ATTRIBUTE static CCEaseOut* actionWithAction(CCActionInterval* pAction, float fRate);
 
     /** Creates the action with the inner action and the rate parameter */
     static CCEaseOut* create(CCActionInterval* pAction, float fRate);
@@ -136,6 +145,7 @@ public:
 
 /** 
  @brief CCEaseInOut action with a rate
+ @ingroup Actions
  */
 class CC_DLL CCEaseInOut : public CCEaseRateAction
 {
@@ -146,9 +156,9 @@ public:
 
 public:
     /** Creates the action with the inner action and the rate parameter 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCEaseInOut* actionWithAction(CCActionInterval* pAction, float fRate);
+    CC_DEPRECATED_ATTRIBUTE static CCEaseInOut* actionWithAction(CCActionInterval* pAction, float fRate);
 
     /** Creates the action with the inner action and the rate parameter */
     static CCEaseInOut* create(CCActionInterval* pAction, float fRate);
@@ -156,6 +166,7 @@ public:
 
 /** 
  @brief CCEase Exponential In
+ @ingroup Actions
  */
 class CC_DLL CCEaseExponentialIn : public CCActionEase
 {
@@ -166,15 +177,16 @@ public:
 
 public:
     /** creates the action 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCEaseExponentialIn* actionWithAction(CCActionInterval* pAction);
+    CC_DEPRECATED_ATTRIBUTE static CCEaseExponentialIn* actionWithAction(CCActionInterval* pAction);
     /** creates the action */
     static CCEaseExponentialIn* create(CCActionInterval* pAction);
 };
 
 /** 
  @brief Ease Exponential Out
+ @ingroup Actions
  */
 class CC_DLL CCEaseExponentialOut : public CCActionEase
 {
@@ -185,15 +197,16 @@ public:
 
 public:
     /** creates the action 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCEaseExponentialOut* actionWithAction(CCActionInterval* pAction);
+    CC_DEPRECATED_ATTRIBUTE static CCEaseExponentialOut* actionWithAction(CCActionInterval* pAction);
     /** creates the action */
     static CCEaseExponentialOut* create(CCActionInterval* pAction);
 };
 
 /** 
  @brief Ease Exponential InOut
+ @ingroup Actions
  */
 class CC_DLL CCEaseExponentialInOut : public CCActionEase
 {
@@ -204,9 +217,9 @@ public:
 
 public:
     /** creates the action 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCEaseExponentialInOut* actionWithAction(CCActionInterval* pAction);
+    CC_DEPRECATED_ATTRIBUTE static CCEaseExponentialInOut* actionWithAction(CCActionInterval* pAction);
 
     /** creates the action */
     static CCEaseExponentialInOut* create(CCActionInterval* pAction);
@@ -214,6 +227,7 @@ public:
 
 /** 
  @brief Ease Sine In
+ @ingroup Actions
  */
 class CC_DLL CCEaseSineIn : public CCActionEase
 {
@@ -224,15 +238,16 @@ public:
 
 public:
     /** creates the action 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCEaseSineIn* actionWithAction(CCActionInterval* pAction);
+    CC_DEPRECATED_ATTRIBUTE static CCEaseSineIn* actionWithAction(CCActionInterval* pAction);
     /** creates the action */
     static CCEaseSineIn* create(CCActionInterval* pAction);
 };
 
 /** 
  @brief Ease Sine Out
+ @ingroup Actions
  */
 class CC_DLL CCEaseSineOut : public CCActionEase
 {
@@ -243,15 +258,16 @@ public:
 
 public:
     /** creates the action 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCEaseSineOut* actionWithAction(CCActionInterval* pAction);
+    CC_DEPRECATED_ATTRIBUTE static CCEaseSineOut* actionWithAction(CCActionInterval* pAction);
     /** creates the action */
     static CCEaseSineOut* create(CCActionInterval* pAction);
 };
 
 /** 
  @brief Ease Sine InOut
+ @ingroup Actions
  */
 class CC_DLL CCEaseSineInOut : public CCActionEase
 {
@@ -262,9 +278,9 @@ public:
 
 public:
     /** creates the action 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCEaseSineInOut* actionWithAction(CCActionInterval* pAction);
+    CC_DEPRECATED_ATTRIBUTE static CCEaseSineInOut* actionWithAction(CCActionInterval* pAction);
     /** creates the action */
     static CCEaseSineInOut* create(CCActionInterval* pAction);
 };
@@ -272,6 +288,7 @@ public:
 /** 
  @brief Ease Elastic abstract class
  @since v0.8.2
+ @ingroup Actions
  */
 class CC_DLL CCEaseElastic : public CCActionEase
 {
@@ -289,9 +306,9 @@ public:
 
 public:
     /** Creates the action with the inner action and the period in radians (default is 0.3) 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCEaseElastic* actionWithAction(CCActionInterval *pAction, float fPeriod = 0.3f);
+    CC_DEPRECATED_ATTRIBUTE static CCEaseElastic* actionWithAction(CCActionInterval *pAction, float fPeriod = 0.3f);
     /** Creates the action with the inner action and the period in radians (default is 0.3) */
     static CCEaseElastic* create(CCActionInterval *pAction, float fPeriod = 0.3f);
 protected:
@@ -302,6 +319,7 @@ protected:
  @brief Ease Elastic In action.
  @warning This action doesn't use a bijective fucntion. Actions like Sequence might have an unexpected result when used with this action.
  @since v0.8.2
+ @ingroup Actions
  */
 class CC_DLL CCEaseElasticIn : public CCEaseElastic
 {
@@ -312,9 +330,9 @@ public:
 
 public:
     /** Creates the action with the inner action and the period in radians (default is 0.3) 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCEaseElasticIn* actionWithAction(CCActionInterval *pAction, float fPeriod = 0.3f);
+    CC_DEPRECATED_ATTRIBUTE static CCEaseElasticIn* actionWithAction(CCActionInterval *pAction, float fPeriod = 0.3f);
     /** Creates the action with the inner action and the period in radians (default is 0.3) */
     static CCEaseElasticIn* create(CCActionInterval *pAction, float fPeriod = 0.3f);
 };
@@ -323,6 +341,7 @@ public:
  @brief Ease Elastic Out action.
  @warning This action doesn't use a bijective fucntion. Actions like Sequence might have an unexpected result when used with this action.
  @since v0.8.2
+ @ingroup Actions
  */
 class CC_DLL CCEaseElasticOut : public CCEaseElastic
 {
@@ -333,9 +352,9 @@ public:
 
 public:
     /** Creates the action with the inner action and the period in radians (default is 0.3) 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCEaseElasticOut* actionWithAction(CCActionInterval *pAction, float fPeriod = 0.3f);
+    CC_DEPRECATED_ATTRIBUTE static CCEaseElasticOut* actionWithAction(CCActionInterval *pAction, float fPeriod = 0.3f);
 
     /** Creates the action with the inner action and the period in radians (default is 0.3) */
     static CCEaseElasticOut* create(CCActionInterval *pAction, float fPeriod = 0.3f);
@@ -345,6 +364,7 @@ public:
  @brief Ease Elastic InOut action.
  @warning This action doesn't use a bijective fucntion. Actions like Sequence might have an unexpected result when used with this action.
  @since v0.8.2
+ @ingroup Actions
  */
 class CC_DLL CCEaseElasticInOut : public CCEaseElastic
 {
@@ -355,9 +375,9 @@ public:
 
 public:
     /** Creates the action with the inner action and the period in radians (default is 0.3) 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCEaseElasticInOut* actionWithAction(CCActionInterval *pAction, float fPeriod = 0.3f);
+    CC_DEPRECATED_ATTRIBUTE static CCEaseElasticInOut* actionWithAction(CCActionInterval *pAction, float fPeriod = 0.3f);
 
     /** Creates the action with the inner action and the period in radians (default is 0.3) */
     static CCEaseElasticInOut* create(CCActionInterval *pAction, float fPeriod = 0.3f);
@@ -366,6 +386,7 @@ public:
 /** 
  @brief CCEaseBounce abstract class.
  @since v0.8.2
+ @ingroup Actions
 */
 class CC_DLL CCEaseBounce : public CCActionEase
 {
@@ -376,9 +397,9 @@ public:
 
 public:
     /** creates the action 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCEaseBounce* actionWithAction(CCActionInterval* pAction);
+    CC_DEPRECATED_ATTRIBUTE static CCEaseBounce* actionWithAction(CCActionInterval* pAction);
     /** creates the action */
     static CCEaseBounce* create(CCActionInterval* pAction);
 };
@@ -387,6 +408,7 @@ public:
  @brief CCEaseBounceIn action.
  @warning This action doesn't use a bijective function. Actions like Sequence might have an unexpected result when used with this action.
  @since v0.8.2
+ @ingroup Actions
 */
 class CC_DLL CCEaseBounceIn : public CCEaseBounce
 {
@@ -397,9 +419,9 @@ public:
 
 public:
     /** creates the action
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCEaseBounceIn* actionWithAction(CCActionInterval* pAction);
+    CC_DEPRECATED_ATTRIBUTE static CCEaseBounceIn* actionWithAction(CCActionInterval* pAction);
     /** creates the action */
     static CCEaseBounceIn* create(CCActionInterval* pAction);
 };
@@ -408,6 +430,7 @@ public:
  @brief EaseBounceOut action.
  @warning This action doesn't use a bijective fucntion. Actions like Sequence might have an unexpected result when used with this action.
  @since v0.8.2
+ @ingroup Actions
  */
 class CC_DLL CCEaseBounceOut : public CCEaseBounce
 {
@@ -418,9 +441,9 @@ public:
 
 public:
     /** creates the action 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCEaseBounceOut* actionWithAction(CCActionInterval* pAction);
+    CC_DEPRECATED_ATTRIBUTE static CCEaseBounceOut* actionWithAction(CCActionInterval* pAction);
     /** creates the action */
     static CCEaseBounceOut* create(CCActionInterval* pAction);
 };
@@ -429,6 +452,7 @@ public:
  @brief CCEaseBounceInOut action.
  @warning This action doesn't use a bijective fucntion. Actions like Sequence might have an unexpected result when used with this action.
  @since v0.8.2
+ @ingroup Actions
  */
 class CC_DLL CCEaseBounceInOut : public CCEaseBounce
 {
@@ -439,9 +463,9 @@ public:
 
 public:
     /** creates the action 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCEaseBounceInOut* actionWithAction(CCActionInterval* pAction);
+    CC_DEPRECATED_ATTRIBUTE static CCEaseBounceInOut* actionWithAction(CCActionInterval* pAction);
     /** creates the action */
     static CCEaseBounceInOut* create(CCActionInterval* pAction);
 };
@@ -450,6 +474,7 @@ public:
  @brief CCEaseBackIn action.
  @warning This action doesn't use a bijective fucntion. Actions like Sequence might have an unexpected result when used with this action.
  @since v0.8.2
+ @ingroup Actions
  */
 class CC_DLL CCEaseBackIn : public CCActionEase
 {
@@ -460,9 +485,9 @@ public:
 
 public:
     /** creates the action 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCEaseBackIn* actionWithAction(CCActionInterval* pAction);
+    CC_DEPRECATED_ATTRIBUTE static CCEaseBackIn* actionWithAction(CCActionInterval* pAction);
     /** creates the action */
     static CCEaseBackIn* create(CCActionInterval* pAction);
 };
@@ -471,6 +496,7 @@ public:
  @brief CCEaseBackOut action.
  @warning This action doesn't use a bijective fucntion. Actions like Sequence might have an unexpected result when used with this action.
  @since v0.8.2
+ @ingroup Actions
  */
 class CC_DLL CCEaseBackOut : public CCActionEase
 {
@@ -481,9 +507,9 @@ public:
 
 public:
     /** creates the action 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCEaseBackOut* actionWithAction(CCActionInterval* pAction);
+    CC_DEPRECATED_ATTRIBUTE static CCEaseBackOut* actionWithAction(CCActionInterval* pAction);
     /** creates the action */
     static CCEaseBackOut* create(CCActionInterval* pAction);
 };
@@ -492,6 +518,7 @@ public:
  @brief CCEaseBackInOut action.
  @warning This action doesn't use a bijective fucntion. Actions like Sequence might have an unexpected result when used with this action.
  @since v0.8.2
+ @ingroup Actions
  */
 class CC_DLL CCEaseBackInOut : public CCActionEase
 {
@@ -502,12 +529,15 @@ public:
 
 public:
     /** creates the action 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCEaseBackInOut* actionWithAction(CCActionInterval* pAction);
+    CC_DEPRECATED_ATTRIBUTE static CCEaseBackInOut* actionWithAction(CCActionInterval* pAction);
     /** creates the action */
     static CCEaseBackInOut* create(CCActionInterval* pAction);
 };
+
+// end of actions group
+/// @}
 
 NS_CC_END
 

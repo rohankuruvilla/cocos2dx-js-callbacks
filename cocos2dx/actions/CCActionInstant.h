@@ -32,6 +32,11 @@ THE SOFTWARE.
 
 NS_CC_BEGIN
 
+/**
+ * @addtogroup actions
+ * @{
+ */
+
 /** 
 @brief Instant actions are immediate actions. They don't have a duration like
 the CCIntervalAction actions.
@@ -64,9 +69,9 @@ public:
 public:
     //override static method
     /** Allocates and initializes the action 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCShow * action();
+    CC_DEPRECATED_ATTRIBUTE static CCShow * action();
 
     /** Allocates and initializes the action */
     static CCShow * create();
@@ -89,9 +94,9 @@ public:
 public:
     //override static method
     /** Allocates and initializes the action 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCHide * action();
+    CC_DEPRECATED_ATTRIBUTE static CCHide * action();
 
     /** Allocates and initializes the action */
     static CCHide * create();
@@ -110,9 +115,9 @@ public:
 public:
     //override static method
     /** Allocates and initializes the action 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCToggleVisibility * action();
+    CC_DEPRECATED_ATTRIBUTE static CCToggleVisibility * action();
 
     /** Allocates and initializes the action */
     static CCToggleVisibility * create();
@@ -131,9 +136,9 @@ public:
     virtual ~CCFlipX(){}
 
     /** create the action 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCFlipX * actionWithFlipX(bool x);
+    CC_DEPRECATED_ATTRIBUTE static CCFlipX * actionWithFlipX(bool x);
 
     /** create the action */
     static CCFlipX * create(bool x);
@@ -162,9 +167,9 @@ public:
     virtual ~CCFlipY(){}
     
     /** create the action 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCFlipY * actionWithFlipY(bool y);
+    CC_DEPRECATED_ATTRIBUTE static CCFlipY * actionWithFlipY(bool y);
 
     /** create the action */
     static CCFlipY * create(bool y);
@@ -188,9 +193,9 @@ public:
     CCPlace(){}
     virtual ~CCPlace(){}
     /** creates a Place action with a position 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCPlace * actionWithPosition(const CCPoint& pos);
+    CC_DEPRECATED_ATTRIBUTE static CCPlace * actionWithPosition(const CCPoint& pos);
     /** creates a Place action with a position */
     static CCPlace * create(const CCPoint& pos);
     /** Initializes a Place action with a position */
@@ -217,10 +222,10 @@ public:
         CC_SAFE_RELEASE(m_pSelectorTarget);
     }
     /** creates the action with the callback 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     typedef void (CCObject::*SEL_CallFunc)();
     */
-    static CCCallFunc * actionWithTarget(CCObject* pSelectorTarget, SEL_CallFunc selector);
+    CC_DEPRECATED_ATTRIBUTE static CCCallFunc * actionWithTarget(CCObject* pSelectorTarget, SEL_CallFunc selector);
 
     /** creates the action with the callback 
 
@@ -277,10 +282,10 @@ public:
     CCCallFuncN(){}
     virtual ~CCCallFuncN(){}
     /** creates the action with the callback 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     typedef void (CCObject::*SEL_CallFuncN)(CCNode*);
     */
-    static CCCallFuncN * actionWithTarget(CCObject* pSelectorTarget, SEL_CallFuncN selector);
+    CC_DEPRECATED_ATTRIBUTE static CCCallFuncN * actionWithTarget(CCObject* pSelectorTarget, SEL_CallFuncN selector);
 
     /** creates the action with the callback 
 
@@ -307,9 +312,9 @@ class CC_DLL CCCallFuncND : public CCCallFuncN
 public:
 
     /** creates the action with the callback and the data to pass as an argument 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCCallFuncND * actionWithTarget(CCObject* pSelectorTarget, SEL_CallFuncND selector, void* d);
+    CC_DEPRECATED_ATTRIBUTE static CCCallFuncND * actionWithTarget(CCObject* pSelectorTarget, SEL_CallFuncND selector, void* d);
 
     /** creates the action with the callback and the data to pass as an argument */
     static CCCallFuncND * create(CCObject* pSelectorTarget, SEL_CallFuncND selector, void* d);
@@ -336,10 +341,10 @@ public:
     CCCallFuncO();
     virtual ~CCCallFuncO();
     /** creates the action with the callback 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     typedef void (CCObject::*SEL_CallFuncO)(CCObject*);
     */
-    static CCCallFuncO * actionWithTarget(CCObject* pSelectorTarget, SEL_CallFuncO selector, CCObject* pObject);
+    CC_DEPRECATED_ATTRIBUTE static CCCallFuncO * actionWithTarget(CCObject* pSelectorTarget, SEL_CallFuncO selector, CCObject* pObject);
 
     /** creates the action with the callback 
 
@@ -375,6 +380,9 @@ protected:
     /** object to be passed as argument */
     CCObject* m_pObject;
 };
+
+// end of actions group
+/// @}
 
 NS_CC_END
 

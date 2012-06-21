@@ -29,6 +29,11 @@ THE SOFTWARE.
 
 NS_CC_BEGIN
 
+/**
+ * @addtogroup actions
+ * @{
+ */
+
 class CCActionTweenDelegate
 {
 public:
@@ -58,9 +63,9 @@ class CCActionTween : public CCActionInterval
 {
 public:
     /** creates an initializes the action with the property name (key), and the from and to parameters. 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCActionTween* actionWithDuration(float aDuration, const char* key, float from, float to);
+    CC_DEPRECATED_ATTRIBUTE static CCActionTween* actionWithDuration(float aDuration, const char* key, float from, float to);
     /** creates an initializes the action with the property name (key), and the from and to parameters. */
     static CCActionTween* create(float aDuration, const char* key, float from, float to);
     /** initializes the action with the property name (key), and the from and to parameters. */
@@ -74,6 +79,9 @@ public:
     float            m_fFrom, m_fTo;
     float            m_fDelta;
 };
+
+// end of actions group
+/// @}
 
 NS_CC_END
 

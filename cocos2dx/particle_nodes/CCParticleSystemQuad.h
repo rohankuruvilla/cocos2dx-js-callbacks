@@ -33,6 +33,11 @@ NS_CC_BEGIN
 
 class CCSpriteFrame;
 
+/**
+ * @addtogroup particle_nodes
+ * @{
+ */
+
 /** @brief CCParticleSystemQuad is a subclass of CCParticleSystem
 
 It includes all the features of ParticleSystem.
@@ -63,9 +68,9 @@ public:
 
     /** creates an initializes a CCParticleSystemQuad from a plist file.
     This plist files can be creted manually or with Particle Designer:  
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCParticleSystemQuad * particleWithFile(const char *plistFile);
+    CC_DEPRECATED_ATTRIBUTE static CCParticleSystemQuad * particleWithFile(const char *plistFile);
 
     /** creates an initializes a CCParticleSystemQuad from a plist file.
     This plist files can be creted manually or with Particle Designer:  
@@ -101,8 +106,8 @@ public:
      */
     void listenBackToForeground(CCObject *obj);
 
-    //@warning: This interface will be deprecated in future.
-    static CCParticleSystemQuad * node();
+    //@deprecated: This interface will be deprecated sooner or later.
+    CC_DEPRECATED_ATTRIBUTE static CCParticleSystemQuad * node();
 
     static CCParticleSystemQuad * create();
 private:
@@ -113,6 +118,9 @@ private:
 #endif
     bool allocMemory();
 };
+
+// end of particle_nodes group
+/// @}
 
 NS_CC_END
 

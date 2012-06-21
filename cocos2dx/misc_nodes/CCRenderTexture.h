@@ -31,6 +31,11 @@ THE SOFTWARE.
 
 NS_CC_BEGIN
 
+/**
+ * @addtogroup textures
+ * @{
+ */
+
 typedef enum eImageFormat
 {
     kCCImageFormatJPEG      = 0,
@@ -59,19 +64,19 @@ public:
     virtual ~CCRenderTexture();
 
     /** initializes a RenderTexture object with width and height in Points and a pixel format( only RGB and RGBA formats are valid ) and depthStencil format
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCRenderTexture * renderTextureWithWidthAndHeight(int w ,int h, CCTexture2DPixelFormat eFormat, GLuint uDepthStencilFormat);
+    CC_DEPRECATED_ATTRIBUTE static CCRenderTexture * renderTextureWithWidthAndHeight(int w ,int h, CCTexture2DPixelFormat eFormat, GLuint uDepthStencilFormat);
 
     /** creates a RenderTexture object with width and height in Points and a pixel format, only RGB and RGBA formats are valid 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCRenderTexture * renderTextureWithWidthAndHeight(int w, int h, CCTexture2DPixelFormat eFormat);
+    CC_DEPRECATED_ATTRIBUTE static CCRenderTexture * renderTextureWithWidthAndHeight(int w, int h, CCTexture2DPixelFormat eFormat);
 
     /** creates a RenderTexture object with width and height in Points, pixel format is RGBA8888 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCRenderTexture * renderTextureWithWidthAndHeight(int w, int h);
+    CC_DEPRECATED_ATTRIBUTE static CCRenderTexture * renderTextureWithWidthAndHeight(int w, int h);
 
     /** initializes a RenderTexture object with width and height in Points and a pixel format( only RGB and RGBA formats are valid ) and depthStencil format*/
     static CCRenderTexture * create(int w ,int h, CCTexture2DPixelFormat eFormat, GLuint uDepthStencilFormat);
@@ -145,6 +150,9 @@ protected:
     CCImage*     m_pUITextureImage;
     GLenum       m_ePixelFormat;
 };
+
+// end of textures group
+/// @}
 
 NS_CC_END
 

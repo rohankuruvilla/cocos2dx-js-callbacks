@@ -32,8 +32,14 @@ NS_CC_BEGIN
 
 class CCCamera;
 
+/**
+ * @addtogroup actions
+ * @{
+ */
+
 /** 
 @brief Base class for CCCamera actions
+@ingroup Actions
 */
 class CC_DLL CCActionCamera : public CCActionInterval //<NSCopying> 
 {
@@ -70,6 +76,7 @@ protected:
 /** 
 @brief CCOrbitCamera action
 Orbits the camera around the center of the screen using spherical coordinates
+@ingroup Actions
 */
 class CC_DLL CCOrbitCamera : public CCActionCamera //<NSCopying> 
 {
@@ -88,9 +95,9 @@ public:
     {}
     ~CCOrbitCamera(){}
     /** creates a CCOrbitCamera action with radius, delta-radius,  z, deltaZ, x, deltaX 
-    @warning: This interface will be deprecated in future.
+    @deprecated: This interface will be deprecated sooner or later.
     */
-    static CCOrbitCamera* actionWithDuration(float t, float radius, float deltaRadius, float angleZ, float deltaAngleZ, float angleX, float deltaAngleX);
+    CC_DEPRECATED_ATTRIBUTE static CCOrbitCamera* actionWithDuration(float t, float radius, float deltaRadius, float angleZ, float deltaAngleZ, float angleX, float deltaAngleX);
     
     /** creates a CCOrbitCamera action with radius, delta-radius,  z, deltaZ, x, deltaX */
     static CCOrbitCamera* create(float t, float radius, float deltaRadius, float angleZ, float deltaAngleZ, float angleX, float deltaAngleX);
@@ -117,6 +124,9 @@ protected:
     float m_fRadX;
     float m_fRadDeltaX;
 };
+
+// end of actions group
+/// @}
 
 NS_CC_END
 
