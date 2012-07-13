@@ -59,6 +59,11 @@ protected:
     bool m_bIsEnabled;
     bool m_bIsSelected;
 public:
+    static const uint32_t OBJECT_TYPE = 0x103;
+    virtual uint32_t getObjectType() {
+        return CCMenuItem::OBJECT_TYPE;
+    };
+
     CCMenuItem()
     : m_bIsSelected(false)
     , m_bIsEnabled(false)            
@@ -115,6 +120,11 @@ class CC_DLL CCMenuItemLabel : public CCMenuItem, public CCRGBAProtocol
     /** Label that is rendered. It can be any CCNode that implements the CCLabelProtocol */
     CC_PROPERTY(CCNode*, m_pLabel, Label);
 public:
+    static const uint32_t OBJECT_TYPE = 0x104;
+    virtual uint32_t getObjectType() {
+        return CCMenuItemLabel::OBJECT_TYPE;
+    };
+
     CCMenuItemLabel()
     : m_pLabel(NULL)
     , m_fOriginalScale(0.0)
@@ -158,12 +168,18 @@ protected:
     float        m_fOriginalScale;
 };
 
+
 /** @brief A CCMenuItemAtlasFont
  Helper class that creates a MenuItemLabel class with a LabelAtlas
  */
 class CC_DLL CCMenuItemAtlasFont : public CCMenuItemLabel
 {
 public:
+    static const uint32_t OBJECT_TYPE = 0x105;
+    virtual uint32_t getObjectType() {
+        return CCMenuItemAtlasFont::OBJECT_TYPE;
+    };
+
     CCMenuItemAtlasFont(){}
     virtual ~CCMenuItemAtlasFont(){}
     /** creates a menu item from a string and atlas with a target/selector 
@@ -183,12 +199,18 @@ public:
     bool initWithString(const char *value, const char *charMapFile, int itemWidth, int itemHeight, char startCharMap, CCObject* target, SEL_MenuHandler selector);
 };
 
+
 /** @brief A CCMenuItemFont
  Helper class that creates a CCMenuItemLabel class with a Label
  */
 class CC_DLL CCMenuItemFont : public CCMenuItemLabel
 {
 public:
+    static const uint32_t OBJECT_TYPE = 0x106;
+    virtual uint32_t getObjectType() {
+        return CCMenuItemFont::OBJECT_TYPE;
+    };
+
     CCMenuItemFont() : m_uFontSize(0), m_strFontName(""){}
     virtual ~CCMenuItemFont(){}
     /** set default font size */
@@ -240,6 +262,7 @@ protected:
     std::string m_strFontName;
 };
 
+
 /** @brief CCMenuItemSprite accepts CCNode<CCRGBAProtocol> objects as items.
  The images has 3 different states:
  - unselected image
@@ -257,6 +280,11 @@ class CC_DLL CCMenuItemSprite : public CCMenuItem, public CCRGBAProtocol
     /** the image used when the item is disabled */
     CC_PROPERTY(CCNode*, m_pDisabledImage, DisabledImage);
 public:
+    static const uint32_t OBJECT_TYPE = 0x107;
+    virtual uint32_t getObjectType() {
+        return CCMenuItemSprite::OBJECT_TYPE;
+    };
+
     CCMenuItemSprite()
     :m_pNormalImage(NULL)
     ,m_pSelectedImage(NULL)
@@ -303,6 +331,7 @@ protected:
     virtual void updateImagesVisibility();
 };
 
+
 /** @brief CCMenuItemImage accepts images as items.
  The images has 3 different states:
  - unselected image
@@ -314,6 +343,11 @@ protected:
 class CC_DLL CCMenuItemImage : public CCMenuItemSprite
 {
 public:
+    static const uint32_t OBJECT_TYPE = 0x108;
+    virtual uint32_t getObjectType() {
+        return CCMenuItemImage::OBJECT_TYPE;
+    };
+
     CCMenuItemImage(){}
     virtual ~CCMenuItemImage(){}
     /** creates a menu item with a normal and selected image
@@ -361,6 +395,7 @@ public:
     static CCMenuItemImage* create();
 };
 
+
 /** @brief A CCMenuItemToggle
  A simple container class that "toggles" it's inner items
  The inner itmes can be any MenuItem
@@ -378,6 +413,11 @@ class CC_DLL CCMenuItemToggle : public CCMenuItem, public CCRGBAProtocol
      */
     CC_PROPERTY(CCArray*, m_pSubItems, SubItems);
 public:
+    static const uint32_t OBJECT_TYPE = 0x109;
+    virtual uint32_t getObjectType() {
+        return CCMenuItemToggle::OBJECT_TYPE;
+    };
+
     CCMenuItemToggle()
     : m_cOpacity(0)
     , m_uSelectedIndex(0)
@@ -421,7 +461,8 @@ public:
     virtual void setOpacityModifyRGB(bool bValue) {CC_UNUSED_PARAM(bValue);}
     virtual bool isOpacityModifyRGB(void) { return false;}
 };
-    
+
+
 // end of GUI group
 /// @}
 /// @}

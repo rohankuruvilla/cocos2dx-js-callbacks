@@ -55,6 +55,11 @@ All features from CCNode are valid, plus the following new features:
 class CC_DLL CCLayer : public CCNode, public CCTouchDelegate, public CCAccelerometerDelegate, public CCKeypadDelegate
 {
 public:
+    static const uint32_t OBJECT_TYPE = 0x10B;
+    virtual uint32_t getObjectType() {
+        return CCLayer::OBJECT_TYPE;
+    };
+
     CCLayer();
     virtual ~CCLayer();
     bool init();
@@ -130,7 +135,8 @@ private:
     int  excuteScriptTouchHandler(int nEventType, CCTouch *pTouch);
     int  excuteScriptTouchHandler(int nEventType, CCSet *pTouches);
 };
-    
+
+
 // for the subclass of CCLayer, each has to implement the static "node" method 
 // @deprecated: This interface will be deprecated sooner or later.
 #define LAYER_NODE_FUNC(layer) \
@@ -220,6 +226,10 @@ protected:
     ccColor4F  m_pSquareColors[4];
 
 public:
+    static const uint32_t OBJECT_TYPE = 0x10C;
+    virtual uint32_t getObjectType() {
+        return CCLayerColor::OBJECT_TYPE;
+    };
 
     CCLayerColor();
     virtual ~CCLayerColor();
@@ -272,6 +282,7 @@ protected:
     virtual void updateColor();
 };
 
+
 //
 // CCLayerGradient
 //
@@ -298,6 +309,11 @@ If ' compressedInterpolation' is enabled (default mode) you will see both the st
 class CC_DLL CCLayerGradient : public CCLayerColor
 {
 public:
+    static const uint32_t OBJECT_TYPE = 0x10D;
+    virtual uint32_t getObjectType() {
+        return CCLayerGradient::OBJECT_TYPE;
+    };
+
     /** Creates a full-screen CCLayer with a gradient between start and end. 
     @deprecated: This interface will be deprecated sooner or later.
     */
@@ -342,6 +358,7 @@ protected:
     virtual void updateColor();
 };
 
+
 /** @brief CCMultipleLayer is a CCLayer with the ability to multiplex it's children.
 Features:
 - It supports one or more children
@@ -353,6 +370,10 @@ protected:
     unsigned int m_nEnabledLayer;
     CCArray*     m_pLayers;
 public:
+    static const uint32_t OBJECT_TYPE = 0x10E;
+    virtual uint32_t getObjectType() {
+        return CCLayerMultiplex::OBJECT_TYPE;
+    };
 
     CCLayerMultiplex();
     virtual ~CCLayerMultiplex();
@@ -396,6 +417,7 @@ public:
 
     LAYER_CREATE_FUNC(CCLayerMultiplex)
 };
+
 
 // end of layer group
 /// @}
