@@ -59,11 +59,7 @@ protected:
     bool m_bIsEnabled;
     bool m_bIsSelected;
 public:
-    static const uint32_t OBJECT_TYPE = 0x103;
-    virtual uint32_t getObjectType() {
-        return CCMenuItem::OBJECT_TYPE;
-    };
-
+    ADD_OBJECT_TYPE(CCMenuItem)
     CCMenuItem()
     : m_bIsSelected(false)
     , m_bIsEnabled(false)            
@@ -122,11 +118,7 @@ class CC_DLL CCMenuItemLabel : public CCMenuItem, public CCRGBAProtocol
     /** Label that is rendered. It can be any CCNode that implements the CCLabelProtocol */
     CC_PROPERTY(CCNode*, m_pLabel, Label);
 public:
-    static const uint32_t OBJECT_TYPE = 0x104;
-    virtual uint32_t getObjectType() {
-        return CCMenuItemLabel::OBJECT_TYPE;
-    };
-
+    ADD_OBJECT_TYPE(CCMenuItemLabel)
     CCMenuItemLabel()
     : m_pLabel(NULL)
     , m_fOriginalScale(0.0)
@@ -177,11 +169,7 @@ protected:
 class CC_DLL CCMenuItemAtlasFont : public CCMenuItemLabel
 {
 public:
-    static const uint32_t OBJECT_TYPE = 0x105;
-    virtual uint32_t getObjectType() {
-        return CCMenuItemAtlasFont::OBJECT_TYPE;
-    };
-
+    ADD_OBJECT_TYPE(CCMenuItemAtlasFont)
     CCMenuItemAtlasFont(){}
     virtual ~CCMenuItemAtlasFont(){}
     /** creates a menu item from a string and atlas with a target/selector 
@@ -208,11 +196,7 @@ public:
 class CC_DLL CCMenuItemFont : public CCMenuItemLabel
 {
 public:
-    static const uint32_t OBJECT_TYPE = 0x106;
-    virtual uint32_t getObjectType() {
-        return CCMenuItemFont::OBJECT_TYPE;
-    };
-
+    ADD_OBJECT_TYPE(CCMenuItemFont)
     CCMenuItemFont() : m_uFontSize(0), m_strFontName(""){}
     virtual ~CCMenuItemFont(){}
     /** set default font size */
@@ -282,11 +266,7 @@ class CC_DLL CCMenuItemSprite : public CCMenuItem, public CCRGBAProtocol
     /** the image used when the item is disabled */
     CC_PROPERTY(CCNode*, m_pDisabledImage, DisabledImage);
 public:
-    static const uint32_t OBJECT_TYPE = 0x107;
-    virtual uint32_t getObjectType() {
-        return CCMenuItemSprite::OBJECT_TYPE;
-    };
-
+    ADD_OBJECT_TYPE(CCMenuItemSprite)
     CCMenuItemSprite()
     :m_pNormalImage(NULL)
     ,m_pSelectedImage(NULL)
@@ -345,11 +325,7 @@ protected:
 class CC_DLL CCMenuItemImage : public CCMenuItemSprite
 {
 public:
-    static const uint32_t OBJECT_TYPE = 0x108;
-    virtual uint32_t getObjectType() {
-        return CCMenuItemImage::OBJECT_TYPE;
-    };
-
+    ADD_OBJECT_TYPE(CCMenuItemImage)
     CCMenuItemImage(){}
     virtual ~CCMenuItemImage(){}
     /** creates a menu item with a normal and selected image
@@ -415,11 +391,7 @@ class CC_DLL CCMenuItemToggle : public CCMenuItem, public CCRGBAProtocol
      */
     CC_PROPERTY(CCArray*, m_pSubItems, SubItems);
 public:
-    static const uint32_t OBJECT_TYPE = 0x109;
-    virtual uint32_t getObjectType() {
-        return CCMenuItemToggle::OBJECT_TYPE;
-    };
-
+    ADD_OBJECT_TYPE(CCMenuItemToggle)
     CCMenuItemToggle()
     : m_cOpacity(0)
     , m_uSelectedIndex(0)
