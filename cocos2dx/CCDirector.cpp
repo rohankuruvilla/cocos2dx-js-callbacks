@@ -81,8 +81,6 @@ CCDirector* CCDirector::sharedDirector(void)
     return &s_SharedDirector;
 }
 
-ADD_OBJECT_TYPE_DECL(CCDirector)
-
 CCDirector::CCDirector(void)
 {
 
