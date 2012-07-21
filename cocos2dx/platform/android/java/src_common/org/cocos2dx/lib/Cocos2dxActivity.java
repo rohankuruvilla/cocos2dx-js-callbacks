@@ -31,6 +31,7 @@ import android.content.DialogInterface;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -47,11 +48,15 @@ public class Cocos2dxActivity extends Activity{
     private static String packageName;
 
     private static native void nativeSetPaths(String apkPath);
+    private static native void nativeSetAssetManager(AssetManager am);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        
+
+        // Set AssetManager in JniHelper
+        nativeSetAssetManager(getAssets());
+
         // get frame size
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);

@@ -27,6 +27,7 @@ THE SOFTWARE.
 #include <jni.h>
 #include <string>
 #include "platform/CCPlatformMacros.h"
+#include <android/asset_manager.h>
 
 NS_CC_BEGIN
 
@@ -42,6 +43,8 @@ class CC_DLL JniHelper
 public:
     static JavaVM* getJavaVM();
     static void setJavaVM(JavaVM *javaVM);
+    static AAssetManager* getAssetManager();
+    static void setAssetManager(AAssetManager* am);
     static jclass getClassID(const char *className, JNIEnv *env=0);
     static bool getStaticMethodInfo(JniMethodInfo &methodinfo, const char *className, const char *methodName, const char *paramCode);
     static bool getMethodInfo(JniMethodInfo &methodinfo, const char *className, const char *methodName, const char *paramCode);
@@ -49,6 +52,7 @@ public:
 
 private:
     static JavaVM *m_psJavaVM;
+    static AAssetManager *m_assetmanager;
 };
 
 NS_CC_END

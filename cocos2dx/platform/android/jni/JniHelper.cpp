@@ -23,6 +23,8 @@ THE SOFTWARE.
 ****************************************************************************/
 #include "JniHelper.h"
 #include <android/log.h>
+#include <android/asset_manager.h>
+#include <android/asset_manager_jni.h>
 #include <string.h>
 
 #if 1
@@ -191,6 +193,16 @@ JavaVM* JniHelper::getJavaVM()
 void JniHelper::setJavaVM(JavaVM *javaVM)
 {
     m_psJavaVM = javaVM;
+}
+
+AAssetManager* JniHelper::m_assetmanager = NULL;
+
+AAssetManager* JniHelper::getAssetManager() {
+    return m_assetmanager;
+}
+
+void JniHelper::setAssetManager(AAssetManager* am) {
+    m_assetmanager = am;
 }
 
 jclass JniHelper::getClassID(const char *className, JNIEnv *env)
