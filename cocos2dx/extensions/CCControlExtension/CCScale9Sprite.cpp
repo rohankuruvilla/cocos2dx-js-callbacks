@@ -347,7 +347,7 @@ bool CCScale9Sprite::initWithSpriteFrame(CCSpriteFrame* spriteFrame, CCRect capI
 {
     CCAssert(spriteFrame != NULL, "Sprite frame must be not nil");
 
-    CCSpriteBatchNode *batchnode = CCSpriteBatchNode::create(spriteFrame->getTexture(), 9);
+    CCSpriteBatchNode *batchnode = CCSpriteBatchNode::createWithTexture(spriteFrame->getTexture(), 9);
     bool pReturn = this->initWithBatchNode(batchnode, spriteFrame->getRect(), capInsets);
     return pReturn;
 }
@@ -602,7 +602,7 @@ bool CCScale9Sprite::isOpacityModifyRGB()
 
 void CCScale9Sprite::setSpriteFrame(CCSpriteFrame * spriteFrame)
 {
-    CCSpriteBatchNode * batchnode = CCSpriteBatchNode::create(spriteFrame->getTexture(), 9);
+    CCSpriteBatchNode * batchnode = CCSpriteBatchNode::createWithTexture(spriteFrame->getTexture(), 9);
     this->updateWithBatchNode(batchnode, spriteFrame->getRect(), CCRectZero);
 
     // Reset insets
